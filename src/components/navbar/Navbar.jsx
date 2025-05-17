@@ -21,21 +21,21 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/facebook.png" alt="" />
+            <img src="facebook.png" alt="" />
           </a>
           <a
             href="https://github.com/huyduc1704"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/github.png" alt="" />
+            <img src="github.png" alt="" />
           </a>
           <a
             href="https://www.linkedin.com/in/huyndse161632/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/linkedin.png" alt="" />
+            <img src="linkedin.png" alt="" />
           </a>
         </div>
       </div>
