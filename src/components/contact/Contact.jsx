@@ -30,17 +30,24 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_94y20xo",
-        "template_v10u2oh",
-        formRef.current,
-        "pX_2hasGmGcuvjXIW"
+      .send(
+        "service_9lwc7rh",
+        "template_ray0pfx",
+        {
+          name: formRef.current.name.value,
+          email: formRef.current.email.value,
+          message: formRef.current.message.value,
+        },
+        "6GUJlzEOUGC1_WJ9B"
       )
       .then(
         (result) => {
+          console.log("SUCCESS!", result.text);
           setSuccess(true);
+          formRef.current.reset();
         },
         (error) => {
+          console.log("FAILED:", error.text);
           setError(true);
         }
       );
@@ -62,10 +69,7 @@ const Contact = () => {
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Address</h2>
-          <span>
-            64/7R, Tam Dong 1 Hamlet, Thoi Tam Thon Commune, Hoc Mon District,
-            Ho Chi Minh City
-          </span>
+          <span>Thoi Tam Thon Commune, Hoc Mon District, Ho Chi Minh City</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Phone</h2>

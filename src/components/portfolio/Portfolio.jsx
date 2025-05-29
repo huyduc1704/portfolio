@@ -8,17 +8,18 @@ const items = [
     id: 1,
     title: "Skincare Commerce",
     img: homeImg,
-    desc: "An e-commerce skincare platform with full backend features: auth, product/order management, Stripe integration, and a custom skin type quiz system.",
+    desc: "A fullstack skincare e-commerce platform with complete backend features including user authentication (JWT), cart and order management, Stripe payment integration, and a custom skin type quiz system with dynamic question flow and admin management tools. Developed with Spring Boot, MySQL, and ReactJS. Deployed on Azure (backend) and Vercel (frontend).",
+    source: "https://gitlab.com/group074/",
   },
   {
     id: 2,
     title: "Internal Log Management (FPT Software Academy)",
     img: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "Internal internship project at FPT Software Academy. Built backend APIs for tracking report updates and instructor profile data. Source and demo are not public.",
+    desc: "A backend-focused internship project at FPT Software Academy. Designed and implemented RESTful APIs using Spring Boot and MySQL for tracking report update history and managing instructor skill profiles. Worked in a team using Git and ReactJS. Project source and demo are private due to internal use.",
   },
   {
     id: 3,
-    title: "Spa Booking System",
+    title: "Spa Booking System (In Progress)",
     img: manxiImg,
     desc: "A spa website focused on user-friendly appointment booking and service discovery. Currently in UI development phase using ReactJS and GSAP. Planned backend features include booking management, admin dashboard, Web3-based loyalty program, and AI-powered skin analysis using C++.",
   },
@@ -43,7 +44,11 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>See Source Code</button>
+            {item.id === 1 && (
+              <a href={item.source} target="_blank" rel="noopener noreferrer">
+                <button>See Source Code</button>
+              </a>
+            )}
           </motion.div>
         </div>
       </div>

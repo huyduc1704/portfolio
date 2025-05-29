@@ -16,7 +16,7 @@ const App = () => {
         <Navbar />
         <Hero />
       </section>
-      <section id="About">
+      <section id="About" className="long-content-section">
         <About />
       </section>
       <section id="Services">

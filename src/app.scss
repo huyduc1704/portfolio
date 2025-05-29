@@ -21,9 +21,11 @@ a {
 
 section {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   scroll-snap-align: center;
-  overflow: hidden;
+  overflow-x: hidden; // hoặc bỏ overflow luôn nếu không cần thiết
+  overflow-y: auto; // Cho phép scroll theo chiều dọc
+  position: relative;
 }
 
 @mixin mobile {
