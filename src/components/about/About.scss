@@ -8,8 +8,8 @@
   margin: 0 auto;
   padding: 50px 20px;
   box-sizing: border-box;
-  min-height: 100vh; // Đảm bảo tối thiểu chiều cao là 100vh
-  height: auto; // Cho phép mở rộng theo nội dung
+  min-height: 100vh;
+  height: auto;
   padding: 100px 20px;
   padding-bottom: 120px;
 
@@ -119,7 +119,6 @@
     }
   }
 
-  // Combined skills & experience layout
   .skillsExperienceRow {
     display: flex;
     gap: 40px;
