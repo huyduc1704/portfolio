@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./about.scss";
+import "./About.scss";
 import { motion, useInView } from "framer-motion";
 import { FaJava, FaReact, FaDocker, FaGitAlt } from "react-icons/fa";
 import { SiSpringboot, SiMysql, SiPostman } from "react-icons/si";
