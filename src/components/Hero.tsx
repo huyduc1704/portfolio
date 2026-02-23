@@ -13,9 +13,6 @@ export default function Hero() {
                 <p className={styles.description}>
                     I am a backend developer with experience in building scalable and maintainable web applications.
                 </p>
-                <button className={`btn-primary ${styles.hireBtn}`}>
-                    Hire Me <Send size={18} />
-                </button>
             </div>
         </section>
     );
