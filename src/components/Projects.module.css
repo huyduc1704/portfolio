@@ -1,0 +1,333 @@
+.projectsSection {
+  position: relative;
+  z-index: 10;
+  background: radial-gradient(circle at left center, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+}
+
+.categoryTabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.tab:hover {
+    border-color: var(--primary);
+    color: var(--foreground);
+}
+
+.tab.activeTab {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.projectCard {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(14, 165, 233, 0.1);
+}
+
+.projectImageContainer {
+  height: 200px;
+  background-color: var(--secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.projectImage {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #1e293b, #0f172a);
+    color: var(--muted);
+    font-weight: bold;
+}
+
+.projectContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.projectDescription {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.techItem {
+  font-size: 0.8rem;
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.linkIcon {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.linkIcon:hover {
+  color: var(--primary);
+}
+
+.moreBtnWrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* --- Modal Styles --- */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modalContent {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar for Modal */
+.modalContent::-webkit-scrollbar {
+    width: 8px;
+}
+.modalContent::-webkit-scrollbar-track {
+    background: transparent;
+}
+.modalContent::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 20px;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.closeModalBtn:hover {
+  background: rgba(220, 38, 38, 0.1); /* Subtle red on hover */
+  color: #ef4444; /* red-500 */
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.modalHeader {
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modalTitle {
+  font-size: 1.75rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+  padding-right: 2rem; /* Leave space for close button */
+}
+
+.modalTechList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techItemModal {
+  font-size: 0.85rem;
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.modalBody {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modalImageContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--secondary);
+}
+
+.modalImage {
+  object-fit: contain;
+  object-position: top center;
+  background-color: #000;
+}
+
+.modalDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detailSection h4 {
+  font-size: 1.1rem;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+.detailSection p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.detailSection p strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.enhancementsList {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.enhancementsList li {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.enhancementsList li::before {
+  content: "→";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.enhancementsList li strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.fallbackDescription {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .modalHeader, .modalBody {
+    padding: 1.5rem;
+  }
+  
+  .modalImageContainer {
+    height: 250px;
+  }
+  
+  .modalTitle {
+    font-size: 1.5rem;
+  }
+}

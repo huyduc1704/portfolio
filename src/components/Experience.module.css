@@ -1,0 +1,208 @@
+.experienceSection {
+  position: relative;
+  z-index: 10;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 2px;
+  height: 100%;
+  background: var(--border);
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  display: flex;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.timelineDate {
+  width: 30%;
+  padding-right: 3rem;
+  text-align: right;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.timelineContent {
+  width: 70%;
+  padding-left: 3rem;
+  position: relative;
+}
+
+.timelineDot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--background);
+  border: 4px solid var(--primary);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
+
+.experienceCard {
+  background: rgba(30, 41, 59, 0.3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.experienceCard:hover {
+  border-color: rgba(14, 165, 233, 0.3);
+  background: rgba(30, 41, 59, 0.5);
+  transform: translateX(10px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.companyLogo {
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logoPlaceholder {
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.mockupPlaceholder {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Aligns to right side like text */
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* Limit size for desktop */
+    aspect-ratio: 16 / 9;
+    background-color: rgba(30, 41, 59, 0.5); /* Placeholder dark color */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.mockupImage {
+    object-fit: cover;
+    object-position: top center; /* Show the top of architecture diagram */
+}
+
+.jobTitle {
+  font-size: 1.3rem;
+  color: var(--foreground);
+  margin-bottom: 0.25rem;
+}
+
+.companyName {
+  font-size: 1rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.companyName:hover {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.jobDescription {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jobDescription li {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.jobDescription li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.2rem;
+  line-height: 1;
+  top: 2px;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timelineItem {
+    flex-direction: column;
+  }
+  
+  .timelineDate {
+    width: 100%;
+    text-align: left;
+    padding-left: 3rem;
+    padding-right: 0;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .mockupPlaceholder {
+    justify-content: flex-start;
+  }
+  
+  .imageWrapper {
+    max-width: 100%;
+  }
+  
+  .timelineContent {
+    width: 100%;
+    padding-left: 3rem;
+  }
+  
+  .timelineDot {
+    left: 20px;
+    top: -20px;
+  }
+}
